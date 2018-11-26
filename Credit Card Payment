@@ -1,0 +1,21 @@
+bal = float(input('What is the outstanding balance on your credit card?'))
+inr = float(input('What is the annual percentage interest rate on the card?'))
+mmin = float(input('What is the monthly payment percentage on the card?'))
+month = 1
+totpaid = 0
+while (month <= 12):
+  print('Month:', month)
+  intpaid = round(((inr/100) / 12) * bal,2)
+  minpaid = round((bal*(mmin/100)),2)
+  pripaid = round(minpaid - intpaid,2)
+  totpaid = round(totpaid + minpaid,2)
+  bal = round(bal - pripaid, 2)
+  print('Minimum Monthly Payment: £', minpaid)
+  print('Principle Paid: £', pripaid)
+  print('Balance: £', bal)
+  if(month == 12):
+    print('RESULT')
+    print('Total Amount Paid:', totpaid)
+    print('Remaining Balance:', bal)
+  month = (month + 1)
+  
